@@ -44,9 +44,31 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+				<executions>
+					<execution>
+						<id>war-exploded</id>
+				<configuration>
+
+					<webResources>
+
+						<resource>
+							<!-- this is relative to the pom.xml directory -->
+							<directory>target/deploy</directory>
+						</resource>
+					</webResources>
+				</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+              	<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
 		</plugins>
 	</build>
 
