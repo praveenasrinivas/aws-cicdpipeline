@@ -15,7 +15,8 @@ phases:
     finally:
       - echo This always runs even if the update or install command fails
   pre_build:
-
+     commands:
+       -echo "Enter into pre_build"
   build:
     commands:
       - echo "Entered build phrase"
